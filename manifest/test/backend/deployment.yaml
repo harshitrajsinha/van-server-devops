@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: app
+  name: go-app-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: go-app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: go-app
+    spec:
+      containers:
+        - image: harshitrajsinha/van-server:latest
+          name: van-server
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              value: "postgres://admin:secretpassword0808@10.96.169.128:5432/pgdb?sslmode=disable" 

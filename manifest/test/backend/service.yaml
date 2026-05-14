@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: app
+  name: go-app-svc
+spec:
+  selector:
+    app.kubernetes.io/name: go-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort

@@ -1,0 +1,13 @@
+1. Image is pulled locally into K8s from KinD cluster. Load image from host machine to KinD
+```
+kind --name go-cluster load docker-image harshitrajsinha/van-server:latest
+```
+
+2. Replace backend/deployment.yaml -> env = DB_URL -> db-host to db's namespace clusterIP
+
+
+3. To Run Nginx Ingress Controller
+
+```
+helm upgrade --install nginx-ingress oci://ghcr.io/nginxinc/charts/nginx-ingress --namespace nginx-ingress --create-namespace -f nginx-ic-values.yaml
+```
