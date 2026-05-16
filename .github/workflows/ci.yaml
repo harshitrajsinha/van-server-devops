@@ -28,7 +28,7 @@ jobs:
         with:
           version: latest
 
-  Static checks:
+  static-checks:
     runs-on: ubuntu-latest
 
     steps:
