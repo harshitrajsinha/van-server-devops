@@ -21,6 +21,8 @@ import (
 
 var dbClient *sql.DB
 
+// test
+
 // Function to load data to database via schema file
 func loadDataToDatabase(dbClient *sql.DB, filename string) error {
 
