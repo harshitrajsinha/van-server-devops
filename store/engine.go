@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
-	"github.com/harshitrajsinha/goserver-vanmango/models"
+	"github.com/harshitrajsinha/van-server-devops/models"
 )
 
 type engineQueryResponse struct {

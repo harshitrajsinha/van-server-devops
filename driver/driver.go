@@ -3,10 +3,8 @@ package driver
 import (
 	"database/sql"
 	"fmt"
-	"os"
 	"time"
 
-	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
@@ -14,11 +12,9 @@ var db *sql.DB
 var err error
 
 // Initialize database connection
-func InitDB() error {
+func InitDB(dbURL string) error {
 
 	// setup connection url
-	_ = godotenv.Load()
-	dbURL := os.Getenv("DB_URL")
 	connStr := dbURL
 
 	fmt.Println("Waiting for db startup ...")

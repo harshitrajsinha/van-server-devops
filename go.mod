@@ -1,4 +1,4 @@
-module github.com/harshitrajsinha/goserver-vanmango
+module github.com/harshitrajsinha/van-server-devops
 
 go 1.24.1
 

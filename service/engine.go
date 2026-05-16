@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"github.com/harshitrajsinha/goserver-vanmango/models"
-	"github.com/harshitrajsinha/goserver-vanmango/store"
+	"github.com/harshitrajsinha/van-server-devops/models"
+	"github.com/harshitrajsinha/van-server-devops/store"
 )
 
 type EngineService struct {

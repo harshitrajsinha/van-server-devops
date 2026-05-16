@@ -9,12 +9,12 @@ import (
 	"runtime/debug"
 
 	"github.com/gorilla/mux"
-	"github.com/harshitrajsinha/goserver-vanmango/driver"
-	"github.com/harshitrajsinha/goserver-vanmango/middleware"
-	"github.com/harshitrajsinha/goserver-vanmango/routes"
-	apiV1 "github.com/harshitrajsinha/goserver-vanmango/routes/v1"
-	"github.com/harshitrajsinha/goserver-vanmango/service"
-	"github.com/harshitrajsinha/goserver-vanmango/store"
+	"github.com/harshitrajsinha/van-server-devops/driver"
+	"github.com/harshitrajsinha/van-server-devops/middleware"
+	"github.com/harshitrajsinha/van-server-devops/routes"
+	apiV1 "github.com/harshitrajsinha/van-server-devops/routes/v1"
+	"github.com/harshitrajsinha/van-server-devops/service"
+	"github.com/harshitrajsinha/van-server-devops/store"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
@@ -40,7 +40,18 @@ func loadDataToDatabase(dbClient *sql.DB, filename string) error {
 	return nil
 }
 
+func requireEnv(key string) string {
+	value := os.Getenv(key)
+	if value == "" {
+		log.Fatalf("required environment variable %s is not set", key)
+	}
+	return value
+}
+
 func init() {
+
+	_ = godotenv.Load()
+	dbUrl := requireEnv("DB_URL")
 
 	var sqlSchemaFile string = "store/schema.sql"
 
@@ -48,7 +59,7 @@ func init() {
 
 	// initialize database connection
 	var message string
-	err = driver.InitDB()
+	err = driver.InitDB(dbUrl)
 	if err != nil {
 		panic(err)
 	} else {

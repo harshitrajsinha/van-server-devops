@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt"
-	"github.com/harshitrajsinha/goserver-vanmango/models"
+	"github.com/harshitrajsinha/van-server-devops/models"
 	"github.com/joho/godotenv"
 )
 

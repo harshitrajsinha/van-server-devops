@@ -10,9 +10,9 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/gorilla/mux"
-	"github.com/harshitrajsinha/goserver-vanmango/models"
-	"github.com/harshitrajsinha/goserver-vanmango/routes"
-	"github.com/harshitrajsinha/goserver-vanmango/service"
+	"github.com/harshitrajsinha/van-server-devops/models"
+	"github.com/harshitrajsinha/van-server-devops/routes"
+	"github.com/harshitrajsinha/van-server-devops/service"
 )
 
 // Response type is declared in handler/utils.go

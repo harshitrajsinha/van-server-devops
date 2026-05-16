@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/harshitrajsinha/goserver-vanmango/models"
+	"github.com/harshitrajsinha/van-server-devops/models"
 )
 
 type EngineServiceInterface interface {

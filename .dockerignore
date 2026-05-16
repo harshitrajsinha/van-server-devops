@@ -2,3 +2,6 @@ vercel.json
 /docker
 Dockerfile
 .env
+
+main
+out
