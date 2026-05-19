@@ -2,8 +2,11 @@
 ```
 kind --name go-cluster load docker-image harshitrajsinha/van-server:latest
 ```
+2. While creating db connection string env in deployment.yaml:
+- Note database's namespace service name
+- Replace host as <db-svc-name>.<db-namespace>.svc.cluster.local  (This is DNS name and will resolve to clusterIP)
+- We could also replace with clusterIP directly (but is not practiced in production) 
 
-2. Replace backend/deployment.yaml -> env = DB_URL -> db-host to db's namespace clusterIP
 3. Store DB_URL value in secret when replaced with managed database URL like NEON DB
 
 3. To Run Nginx Ingress Controller
